@@ -7,13 +7,16 @@
             <file>file:/C:/Users/Hades/Documents/NetBeansProjects/Attire/web/WEB-INF/web.xml</file>
             <file>file:/C:/Users/Hades/Documents/NetBeansProjects/Attire/web/account.jsp</file>
             <file>file:/C:/Users/Hades/Documents/NetBeansProjects/Attire/src/java/CheckoutServlet.java</file>
+            <file>file:/C:/Users/Hades/Documents/NetBeansProjects/Attire/src/java/Controller/RegisterServlet.java</file>
             <file>file:/C:/Users/Hades/Documents/NetBeansProjects/Attire/web/includes/navbar.jsp</file>
-            <file>file:/C:/Users/Hades/Documents/NetBeansProjects/Attire/web/checkout.jsp</file>
+            <file>file:/C:/Users/Hades/Documents/NetBeansProjects/Attire/src/java/Entity/Cart.java</file>
             <file>file:/C:/Users/Hades/Documents/NetBeansProjects/Attire/nbproject/build-impl.xml~</file>
-            <file>file:/C:/Users/Hades/Documents/NetBeansProjects/Attire/src/java/Controller/DeleteAccountServlet.java</file>
             <file>file:/C:/Users/Hades/Documents/NetBeansProjects/Attire/src/java/Context/DBContext.java</file>
-            <file>file:/C:/Users/Hades/Documents/NetBeansProjects/Attire/src/java/Entity/Account.java</file>
             <file>file:/C:/Users/Hades/Documents/NetBeansProjects/Attire/web/cart.jsp</file>
+            <file>file:/C:/Users/Hades/Documents/NetBeansProjects/Attire/src/java/Controller/LoginServlet.java</file>
+            <file>file:/C:/Users/Hades/Documents/NetBeansProjects/Attire/web/checkout.jsp</file>
+            <file>file:/C:/Users/Hades/Documents/NetBeansProjects/Attire/src/java/Controller/DeleteAccountServlet.java</file>
+            <file>file:/C:/Users/Hades/Documents/NetBeansProjects/Attire/src/java/Entity/Account.java</file>
         </group>
     </open-files>
 </project-private>

@@ -80,7 +80,7 @@ public class RegisterServlet extends HttpServlet {
             Account acc = dao.CheckAccountExist(username);
             if (acc == null) {
                 dao.Register(username, password, name, phone);
-                response.sendRedirect("Login");
+                response.sendRedirect("login");
             } else {
                 request.setAttribute("mess2", "Username already exists!");
                 request.getRequestDispatcher("register.jsp").forward(request, response);
