@@ -152,7 +152,7 @@
                                                 ${p.name}
                                             </td>
                                             <td>
-                                                $ ${p.price}
+                                                $ ${p.price}.00
                                             </td>
                                             <td>
                                             </td>

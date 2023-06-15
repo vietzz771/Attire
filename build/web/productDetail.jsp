@@ -32,7 +32,7 @@
                     <div class="product-content">
                         <div class="border-bt pb-3">
                             <h3 class="text-capitalize mt-4">${detail.name}</h3>
-                            <span class="fw-bold">$ ${detail.price}</span>
+                            <span class="fw-bold">$ ${detail.price}.00</span>
                         </div>
                         <div class="py-4 border-bt pd-text">
                             <p>${detail.description}</p>
@@ -55,7 +55,7 @@
                         <div class="py-3">
                             <div class="d-flex  text-items">
                                 <span>SKU: </span>
-                                <p class="mx-2">Leuleu</p>
+                                <p class="mx-2">${cid}</p>
                             </div>   
                             <div class="d-flex  text-items">    
                                 <span>Categories: </span>

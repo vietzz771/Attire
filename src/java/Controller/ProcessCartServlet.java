@@ -137,25 +137,25 @@ public class ProcessCartServlet extends HttpServlet {
                 }
             }
         }
-        String id=request.getParameter("id");
-        String[] ids=txt.split("/");
-        String out="";
-        for(int i = 0; i < ids.length; i++) {
-            String[] s=ids[i].split(":");
-            if(!s[0].equals(id)){
-                if(out.isEmpty()){
-                    out=ids[i];
-                }else{
-                    out+="/"+ids[i];
+        String id = request.getParameter("id");
+        String[] ids = txt.split("/");
+        String out = "";
+        for (int i = 0; i < ids.length; i++) {
+            String[] s = ids[i].split(":");
+            if (!s[0].equals(id)) {
+                if (out.isEmpty()) {
+                    out = ids[i];
+                } else {
+                    out += "/" + ids[i];
                 }
             }
         }
-        if(!out.isEmpty()){
-            Cookie c=new Cookie("cart", out);
-            c.setMaxAge(2*24*60*60);
+        if (!out.isEmpty()) {
+            Cookie c = new Cookie("cart", out);
+            c.setMaxAge(2 * 24 * 60 * 60);
             response.addCookie(c);
         }
-        Cart cart=new Cart(out, list);
+        Cart cart = new Cart(out, list);
         request.setAttribute("cart", cart);
         request.getRequestDispatcher("cart.jsp").forward(request, response);
     }

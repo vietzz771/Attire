@@ -77,7 +77,7 @@
                                         ></span>
                                 </div>
                                 <p class="text-capitalize my-1">${p.name}</p>
-                                <span class="fw-bold">$ ${p.price}</span>
+                                <span class="fw-bold">$ ${p.price}.00</span>
                                 <div>
                                     <a href="shop" class="text-decoration-none text-dark btn-hover">
                                         <button class="btn m-2 text-dark button">

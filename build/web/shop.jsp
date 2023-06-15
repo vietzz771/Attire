@@ -82,7 +82,7 @@
                                             </div>
                                             <div class="text-center">
                                                 <p class="text-capitalize my-1">${listPd.name}</p>
-                                                <span class="fw-bold">$ ${listPd.price}</span>
+                                                <span class="fw-bold">$ ${listPd.price}.00</span>
                                                 <div>
                                                     <a href="add-to-cart?id=${listPd.productID}&num=1" class="text-decoration-none text-dark btn-hover">
                                                         <button class="btn m-2 text-dark button">
@@ -275,7 +275,7 @@
 
                             <c:choose>
                                 <c:when test="${tag==1}">
-                                    <button class="btn-s" > <a class="${tag == tag?"active":""}"  href="shop?index=${tag}">${tag}</a></button>
+                                    <button class="btn-s" > <a class="${tag == tag?"paging-active":""}"  href="shop?index=${tag}">${tag}</a></button>
                                     <button class="btn-s"> <a   href="shop?index=${tag+1}">${tag+1}</a></button>
                                     <button class="btn-s"> <a   href="shop?index=${tag+2}">${tag+2}</a></button>
                                     </c:when>
@@ -283,12 +283,12 @@
                                     <button class="btn-s"> <a   href="shop?index=${tag-2}">${tag-2}</a></button>
                                     <button class="btn-s"> <a   href="shop?index=${tag-1}">${tag-1}</a></button>
 
-                                    <button class="btn-s"> <a class="${tag == tag?"active":""}"  href="shop?index=${tag}">${tag}</a></button>
+                                    <button class="btn-s"> <a class="${tag == tag?"paging-active":""}"  href="shop?index=${tag}">${tag}</a></button>
 
                                 </c:when>
                                 <c:otherwise>
                                     <button class="btn-s"> <a   href="shop?index=${tag-1}">${tag-1}</a></button>   
-                                    <button class="btn-s"> <a class="${tag == tag?"active":""}"  href="shop?index=${tag}">${tag}</a></button>
+                                    <button class="btn-s"> <a class="${tag == tag?"paging-active":""}"  href="shop?index=${tag}">${tag}</a></button>
                                     <button class="btn-s"> <a   href="shop?index=${tag+1}">${tag+1}</a></button>
                                     </c:otherwise>
                                 </c:choose>

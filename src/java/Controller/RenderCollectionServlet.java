@@ -51,7 +51,6 @@ public class RenderCollectionServlet extends HttpServlet {
         DAO pd = new DAO();
         List<Product> list = pd.getTopProduct();
         request.setAttribute("list", list);
-        
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 

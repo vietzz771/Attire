@@ -32,44 +32,44 @@
                         </div>
                         <c:set var="o" value="${requestScope.cart}"/>
                         <c:forEach items="${o.items}" var="i">
-                                <div class="cart-items d-flex text-center justify-content-between align-items-center p-3">
-                                    <div class="cart-items--img d-flex align-items-center w-20">
-                                        <img src="${i.product.image}" alt="alt"/>
-                                        <span class="px-3">${i.product.name}</span>
-                                    </div>
-                                    <span class="w-20 mx-4">$ ${i.price}</span>
-                                    <div class="cart-input d-flex w-20">
-                                        <a href="process?num=-1&id=${i.product.productID}">
-                                            <button class="btn btn-pd">-</button>
-                                        </a>
-                                        <input type="number" id="typeNumber" class="form-control" value="${i.quantity}" />
-                                        <a href="process?num=1&id=${i.product.productID}">
-                                            <button class="btn btn-pd">+</button>
-                                        </a>
-                                    </div>
-                                    <span class="w-20">$ ${i.price*i.quantity}</span>
-                                    <form action="process" method="post" class="w-20">
-                                        <input type="hidden" name="id" value="${i.product.productID}">
-                                        <input class="remove" type="submit" value="X">
-                                    </form>
-                                    <!--<a href="#" class="w-20 remove">X</a>-->
+                            <div class="cart-items d-flex text-center justify-content-between align-items-center p-3">
+                                <div class="cart-items--img d-flex align-items-center w-20">
+                                    <img src="${i.product.image}" alt="alt"/>
+                                    <span class="px-3">${i.product.name}</span>
                                 </div>
+                                <span class="w-20 mx-4">$ ${i.price}.00</span>
+                                <div class="cart-input d-flex w-20">
+                                    <a href="process?num=-1&id=${i.product.productID}">
+                                        <button class="btn btn-pd">-</button>
+                                    </a>
+                                    <input type="number" id="typeNumber" class="form-control" value="${i.quantity}" />
+                                    <a href="process?num=1&id=${i.product.productID}">
+                                        <button class="btn btn-pd">+</button>
+                                    </a>
+                                </div>
+                                <span class="w-20">$ ${i.price*i.quantity}.00</span>
+                                <form action="process" method="post" class="w-20">
+                                    <input type="hidden" name="id" value="${i.product.productID}">
+                                    <input class="remove" type="submit" value="X"">
+                                </form>
+                                <!--<a href="#" class="w-20 remove">X</a>-->
+                            </div>
                         </c:forEach>
 
-<!--                        <div class="cart-items d-flex text-center justify-content-between align-items-center p-3">
-                            <div class="cart-items--img d-flex align-items-center w-20">
-                                <img src="https://wpbingosite.com/wordpress/flacio/wp-content/uploads/2020/12/15-8-600x713.jpg" alt="alt"/>
-                                <span class="px-3">Name</span>
-                            </div>
-                            <span class="w-20 mx-4">$56</span>
-                            <div class="cart-input d-flex w-20">
-                                <button class="btn btn-pd">-</button>
-                                <input type="number" id="typeNumber" class="form-control" value="1" />
-                                <button class="btn btn-pd">+</button>
-                            </div>
-                            <span class="w-20">$56</span>
-                            <a href="#" class="w-20 remove">X</a>
-                        </div>-->
+                        <!--                        <div class="cart-items d-flex text-center justify-content-between align-items-center p-3">
+                                                    <div class="cart-items--img d-flex align-items-center w-20">
+                                                        <img src="https://wpbingosite.com/wordpress/flacio/wp-content/uploads/2020/12/15-8-600x713.jpg" alt="alt"/>
+                                                        <span class="px-3">Name</span>
+                                                    </div>
+                                                    <span class="w-20 mx-4">$56</span>
+                                                    <div class="cart-input d-flex w-20">
+                                                        <button class="btn btn-pd">-</button>
+                                                        <input type="number" id="typeNumber" class="form-control" value="1" />
+                                                        <button class="btn btn-pd">+</button>
+                                                    </div>
+                                                    <span class="w-20">$56</span>
+                                                    <a href="#" class="w-20 remove">X</a>
+                                                </div>-->
                         <div class="d-flex justify-content-between p-3">
                             <div class="coupon">
                                 <input placeholder="Coupon Code" class="p-2"/>
@@ -92,7 +92,7 @@
                         </div>
                         <div class="d-flex align-items-center  p-3 ">
                             <h6>Subtotal</h6>
-                            <span class="px-4">$ ${o.totalMoney}</span>
+                            <span class="px-4">$ ${o.totalMoney}.00</span>
                         </div>
                         <div class="d-flex align-items-center  p-3">
                             <h6>Shipping</h6>
@@ -100,7 +100,7 @@
                         </div>
                         <div class="d-flex align-items-center p-3">
                             <h6>Total</h6>
-                            <span class="px-4 total-text">$ ${o.totalMoney}</span>
+                            <span class="px-4 total-text">$ ${o.totalMoney}.00</span>
                         </div>
                         <div class="text-center py-4">
                             <a href="checkout" class="cart-btn">

@@ -27,7 +27,7 @@
                             </div>
                         </button>
                         <div id="log-out" class="log-out position-absolute text-center align-items-center">
-                            <h3>Hello ${sessionScope.account.name}</h3>
+                            <h3>Hello ${sessionScope.account.full_name}</h3>
                             <a href="logout" class="d-flex text-decoration-none ">
                                 <i class="fas fa-sign-out-alt mx-2"></i>
                                 <span>Log out</span>

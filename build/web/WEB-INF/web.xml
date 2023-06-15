@@ -76,6 +76,14 @@
         <servlet-name>CheckoutServlet</servlet-name>
         <servlet-class>CheckoutServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RenderOrderServlet</servlet-name>
+        <servlet-class>Controller.RenderOrderServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProcessOrder</servlet-name>
+        <servlet-class>Controller.ProcessOrder</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
@@ -154,6 +162,14 @@
     <servlet-mapping>
         <servlet-name>CheckoutServlet</servlet-name>
         <url-pattern>/checkout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RenderOrderServlet</servlet-name>
+        <url-pattern>/myOrder</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProcessOrder</servlet-name>
+        <url-pattern>/processOrder</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -9,32 +9,38 @@ package Entity;
  * @author Hades
  */
 public class Account {
-
-    private int id;
+    
+    private int account_id;
     private String user;
-    private String pass;
-    private String name;
+    private String password;
+    private String full_name;
     private String phone;
-    private int isAdmin;
+    private String email;
+    private String address;
+    private String role;
 
     public Account() {
     }
 
-    public Account(int id, String user, String pass, String name, String phone, int isAdmin) {
-        this.id = id;
+    
+
+    public Account(int account_id, String user, String password, String full_name, String phone, String email, String address, String role) {
+        this.account_id = account_id;
         this.user = user;
-        this.pass = pass;
-        this.name = name;
+        this.password = password;
+        this.full_name = full_name;
         this.phone = phone;
-        this.isAdmin = isAdmin;
+        this.email = email;
+        this.address = address;
+        this.role = role;
     }
 
-    public int getId() {
-        return id;
+    public int getAccount_id() {
+        return account_id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setAccount_id(int account_id) {
+        this.account_id = account_id;
     }
 
     public String getUser() {
@@ -45,20 +51,20 @@ public class Account {
         this.user = user;
     }
 
-    public String getPass() {
-        return pass;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPass(String pass) {
-        this.pass = pass;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getName() {
-        return name;
+    public String getFull_name() {
+        return full_name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFull_name(String full_name) {
+        this.full_name = full_name;
     }
 
     public String getPhone() {
@@ -69,18 +75,34 @@ public class Account {
         this.phone = phone;
     }
 
-    public int getIsAdmin() {
-        return isAdmin;
+    public String getEmail() {
+        return email;
     }
 
-    public void setIsAdmin(int isAdmin) {
-        this.isAdmin = isAdmin;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     @Override
     public String toString() {
-        return "Account{" + "id=" + id + ", user=" + user + ", pass=" + pass + ", name=" + name + ", phone=" + phone + ", isAdmin=" + isAdmin + '}';
+        return "Account{" + "account_id=" + account_id + ", user=" + user + ", password=" + password + ", full_name=" + full_name + ", phone=" + phone + ", email=" + email + ", address=" + address + ", role=" + role + '}';
     }
-    
-    
+
+   
 }

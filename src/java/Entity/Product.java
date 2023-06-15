@@ -13,41 +13,44 @@ public class Product {
     private int productID;
     private String name;
     private String image;
-    private int price;
     private String description;
     private String filter;
     private int cid;
+    private int price;
     private int quantity;
 
     public Product() {
     }
 
-    public Product(int productID, String name, String image, int price, String description, String filter, int cid, int quantity) {
+    public Product(int productID, String name, String image, String description, String filter, int cid, int price, int quantity) {
         this.productID = productID;
         this.name = name;
         this.image = image;
-        this.price = price;
         this.description = description;
         this.filter = filter;
         this.cid = cid;
+        this.price = price;
+
         this.quantity = quantity;
     }
 
     public Product(String name, String image, int price, String description, int cid) {
         this.name = name;
         this.image = image;
-        this.price = price;
         this.description = description;
         this.cid = cid;
+        this.price = price;
+
     }
 
     public Product(String name, String image, int price, String description, int cid, int productID) {
         this.productID = productID;
         this.name = name;
         this.image = image;
-        this.price = price;
         this.description = description;
         this.cid = cid;
+        this.price = price;
+
     }
 
     public int getProductID() {
@@ -116,7 +119,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" + "productID=" + productID + ", name=" + name + ", image=" + image + ", price=" + price + ", description=" + description + ", filter=" + filter + ", cid=" + cid + '}';
+        return "Product{" + "productID=" + productID + ", name=" + name + ", image=" + image + ", description=" + description + ", filter=" + filter + ", cid=" + cid + ", price =" + price + ", quantity =" +'}';
     }
 
 }

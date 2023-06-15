@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
 
+import Entity.Account;
 import Entity.Cart;
 import Entity.Product;
 import dao.DAO;
@@ -13,6 +14,7 @@ import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -87,7 +89,32 @@ public class CheckoutServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+//        processRequest(request, response);
+        String orderNotes = request.getParameter("orderNotes");
+        DAO dao = new DAO();
+        List<Product> list = dao.getListProduct();
+        Cookie[] arr = request.getCookies();
+        String txt = "";
+        if (arr != null) {
+            for (Cookie o : arr) {
+                if (o.getName().equals("cart")) {
+                    txt += o.getValue();
+                }
+            }
+        }
+        Cart cart = new Cart(txt, list);
+        HttpSession session = request.getSession();
+        Account a = (Account) session.getAttribute("account");
+        if (a == null) {
+            response.sendRedirect("login");
+        } else {
+            dao.addOrder(a, cart, orderNotes);
+            Cookie c = new Cookie("cart", "");
+            c.setMaxAge(0);
+            response.addCookie(c);
+            response.sendRedirect("orderReceived.jsp");
+        }
+
     }
 
     /**

@@ -26,7 +26,7 @@ public class DBContext {
         String port = "1433"; 
         String IP = "127.0.0.1";
         String ServerName = "DESKTOP-QRGLSIH\\YUNBEN";
-        String DBName = "Plant";
+        String DBName = "EPlant";
         String driverClass = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
         String dbURL = "jdbc:sqlserver://" + ServerName + ";databaseName=" + DBName + ";encrypt=false;trustServerCertificate=false;loginTimeout=30";
         try {

@@ -4,20 +4,25 @@
  */
 package Controller;
 
+import Entity.Account;
+import Entity.Order;
+import Entity.OrderDetail;
+import Entity.Product;
+import dao.DAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  *
  * @author Hades
  */
-public class LogoutServlet extends HttpServlet {
+public class ProcessOrder extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,24 +36,18 @@ public class LogoutServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        HttpSession session = request.getSession();
-        session.removeAttribute("account");
-//        session.removeAttribute("cart");
-//        Cookie[] arr = request.getCookies();
-//        for (Cookie o : arr) {
-//            if(o.getName().equals("cart")){
-//                o.setMaxAge(0);
-//            } 
-////            o.getName().equals("cart").setmax;
-//        }
-//        remove cookie when user logout
-        Cookie cart = new Cookie("cart", "");
-        Cookie user = new Cookie("userC", "");
-        cart.setMaxAge(0);
-        user.setMaxAge(0);
-        response.addCookie(cart);
-        response.addCookie(user);
-        response.sendRedirect("/Attire/");
+        try ( PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet ProcessOrder</title>");
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet ProcessOrder at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -63,7 +62,19 @@ public class LogoutServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+//        processRequest(request, response);
+        DAO dao = new DAO();
+        String id = request.getParameter("oid");
+        dao.deleteOrder(id);
+        HttpSession session = request.getSession();
+        Account a = (Account) session.getAttribute("account");
+        List<Order> o = dao.getOrderByAccountId(a);
+        List<OrderDetail> od = dao.getOrderDetailByAccountId(a);
+        List<Product> p = dao.getListProduct();
+        request.setAttribute("order", o);
+        request.setAttribute("orderDetail", od);
+        request.setAttribute("product", p);
+        request.getRequestDispatcher("myOrders.jsp").forward(request, response);
     }
 
     /**

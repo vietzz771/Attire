@@ -12,7 +12,7 @@
                 <a
                     class="text-uppercase text-decoration-none brand text-white"
                     href="index.html"
-                    >Attire</a
+                    >EPlant</a
                 >
                 <!--                        <p class="text-white text-muted mt-3">
                                             Lorem ipsum dolor sit amet consectetur adipisicing
